@@ -1,0 +1,18 @@
+<template>
+    <svg width="5" height="150" viewBox="0 0 5 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 0V149.5" stroke="url(#paint0_linear_7976_7002)" stroke-width="5" />
+        <defs>
+            <linearGradient
+                id="paint0_linear_7976_7002"
+                x1="2.5"
+                y1="0"
+                x2="2.5"
+                y2="149.5"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop stop-color="#D1D1A8" />
+                <stop offset="1" stop-color="#4AB19F" stop-opacity="0.18" />
+            </linearGradient>
+        </defs>
+    </svg>
+</template>
