@@ -3,7 +3,7 @@ import IconAmoebaSolid1 from './icons/IconAmoebaSolid1.vue'
 import IconAppleStore from './icons/IconAppleStore.vue'
 import IconGooglePlay from './icons/IconGooglePlay.vue'
 import IconPlanet4 from './icons/IconPlanet4.vue'
-import { matches768 } from '@/composables/MatchMedia.ts'
+import { matches768 } from '@/composables/MatchMedia'
 </script>
 <template>
     <section>
