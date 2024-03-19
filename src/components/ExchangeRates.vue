@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import IconPlanet1 from './icons/IconPlanet1.vue'
+import { matches425, matches700, matches768 } from '@/composables/MatchMedia'
 
 const activeIndex = ref<number>(0)
 
@@ -11,7 +12,7 @@ const handleClick = (index: number) => {
 const isActive = (index: number): boolean => index === activeIndex.value
 </script>
 <template>
-    <section>
+    <section :style="{ backgroundColor: matches768 ? '#F1F2F2' : undefined }">
         <IconPlanet1 id="planet-1" class="shape" />
         <h1 class="title">Explore our exchange rates and fees</h1>
         <span class="sub-title">Trade bitcoin and other crypto with our affordable rate</span>
@@ -125,7 +126,7 @@ section {
 
 #planet-1 {
     top: 8.5%;
-    left: 25.8%;
+    left: 25%;
 }
 
 .container {
@@ -139,7 +140,7 @@ section {
     display: flex;
     justify-content: space-around;
     height: 16vh;
-    background-color: #f8fcfb;
+    background-color: v-bind('matches768 ? "#EAEFEE" : "#f8fcfb"');
     border-radius: 12px;
 }
 
@@ -169,13 +170,13 @@ section {
     left: v-bind((1.5 + (activeIndex * 33)) + '%');
     width: 30%;
     height: 75%;
-    background-color: #edf7f5;
+    background-color: v-bind('matches768 ? "#E1ECEA" : "#edf7f5"');
     border-radius: 20px;
     transition: left 0.3s;
 }
 
 .table-container {
-    height: v-bind(5 * 12 + 'vh');
+    height: v-bind('(5 * (matches425 ? 8 : matches700 ? 10 : 12)) + "vh"');
     overflow: hidden;
 }
 
@@ -215,7 +216,7 @@ tr {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: v-bind('`1px solid ${ matches768 ? "#E5E6E6" : "#f2f2f2"}`');
     height: 12vh;
 }
 
@@ -258,5 +259,227 @@ th {
 .table-container > span.active {
     height: 100%;
     opacity: 1;
+}
+
+@media all and (min-width: 2560px) {
+}
+
+@media all and (max-width: 1880px) {
+    #planet-1 {
+        top: 6%;
+        left: 15%;
+    }
+}
+
+@media all and (max-width: 1700px) {
+    tr > * {
+        padding-left: 6em;
+    }
+}
+
+@media all and (max-width: 1500px) {
+    tr > * {
+        padding-left: 5em !important;
+    }
+}
+
+@media all and (max-width: 1440px) {
+    table {
+        font-size: 1.5rem;
+    }
+}
+
+@media all and (max-width: 1300px) {
+    #planet-1 {
+        transform: scale(3);
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .tab-header .content {
+        font-size: 1.5rem;
+    }
+
+    table {
+        font-size: 1.3rem;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    .tab-header {
+        width: 30%;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    #planet-1 {
+        transform: scale(2);
+    }
+
+    .title {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .sub-title {
+        font-size: 1rem;
+    }
+
+    .container {
+        margin-top: 2em;
+    }
+
+    .tab-header-container {
+        height: 12vh;
+    }
+
+    .tab-header .content {
+        font-size: 1.4rem;
+    }
+
+    table {
+        font-size: 1.2rem;
+    }
+
+    .percentage-change {
+        font-size: 0.95rem;
+        left: 1rem;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .container {
+        padding: 0 3em;
+    }
+
+    .tab-header .content {
+        font-size: 1.2rem;
+    }
+
+    table {
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .sub-title {
+        font-size: 0.9rem;
+    }
+
+    .tab-header {
+        width: 100%;
+    }
+
+    .tab-header .content {
+        font-size: 1rem;
+    }
+
+    .active-tracker {
+        width: v-bind(100/3 + '%');
+    }
+
+    tr {
+        height: 10vh;
+    }
+
+    tr > * {
+        padding-left: 3em !important;
+    }
+}
+
+@media all and (max-width: 540px) {
+    #planet-1 {
+        transform: scale(1.5);
+        top: 3%;
+    }
+
+    .tab-header-container {
+        height: 10vh;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    .percentage-change {
+        font-size: 0.85rem;
+        left: 0.9rem;
+    }
+}
+
+@media all and (max-width: 480px) {
+    #planet-1 {
+        transform: scale(1);
+        top: 3%;
+    }
+
+    .title {
+        margin-top: 3rem;
+        font-size: 1.2rem;
+    }
+
+    .sub-title {
+        font-size: 0.8rem;
+    }
+
+    .active-tracker {
+        border-radius: 10px;
+    }
+
+    .percentage-change {
+        font-size: 0.7rem;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .tab-header .content {
+        font-size: 0.85rem;
+    }
+
+    tr {
+        height: 8vh;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .title {
+        font-size: 1rem;
+    }
+
+    .sub-title {
+        font-size: 0.65rem;
+    }
+
+    .tab-header-container {
+        height: 8vh;
+    }
+
+    .tab-header .content {
+        font-size: 0.75rem;
+    }
+
+    table {
+        font-size: 0.65rem;
+    }
+
+    .percentage-change {
+        font-size: 0.5rem;
+    }
 }
 </style>
