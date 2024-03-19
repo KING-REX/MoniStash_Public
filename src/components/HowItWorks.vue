@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { matches320, matches540, matches768, matches900 } from '@/composables/MatchMedia'
 import GetStartedButton from './GetStartedButton.vue'
 import IconDoubleUser from './icons/IconDoubleUser.vue'
 import IconFundWallet from './icons/IconFundWallet.vue'
@@ -41,7 +42,11 @@ import IconWithdraw from './icons/IconWithdraw.vue'
                 </div>
             </div>
         </div>
-        <GetStartedButton class="get-started" :multiple="1.4" noLetterSpacing />
+        <GetStartedButton
+            class="get-started"
+            :multiple="matches320 ? 0.8 : matches540 ? 1 : matches768 ? 1.2 : matches900 ? 1 : 1.4"
+            noLetterSpacing
+        />
     </section>
 </template>
 <style scoped>
@@ -109,5 +114,160 @@ section > .title {
 
 .get-started {
     margin: 4.5rem auto 0;
+}
+
+@media all and (max-width: 1600px) {
+    .detail {
+        flex-basis: 30%;
+    }
+}
+
+@media all and (max-width: 1500px) {
+    .write-up .content {
+        font-size: 1.2rem;
+    }
+}
+
+@media all and (max-width: 1300px) {
+    .details {
+        width: 92%;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    section {
+        height: 90vh;
+    }
+
+    .details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 4em;
+        column-gap: 2em;
+    }
+
+    .detail:last-of-type {
+        grid-column: 1/3;
+        width: 50%;
+        justify-self: center;
+    }
+}
+
+@media all and (max-width: 768px) {
+    section {
+        height: 130vh;
+    }
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .detail {
+        width: 50%;
+        justify-self: center;
+    }
+
+    .detail:last-of-type {
+        grid-column: auto;
+    }
+}
+
+@media all and (max-width: 630px) {
+    section {
+        height: 120vh;
+    }
+
+    .detail {
+        width: 75% !important;
+    }
+}
+
+@media all and (max-width: 540px) {
+    section {
+        height: 100vh;
+    }
+
+    section > .title {
+        font-size: 2rem;
+    }
+
+    .details {
+        row-gap: 2em;
+    }
+
+    .write-up .title {
+        font-size: 1.2rem;
+    }
+
+    .write-up .content {
+        font-size: 1rem;
+    }
+
+    .get-started {
+        margin-top: 3rem;
+    }
+}
+
+@media all and (max-width: 450px) {
+    section {
+        height: 95vh;
+    }
+
+    .icon {
+        width: 3.5em;
+        height: 3.5em;
+    }
+
+    .icon-image {
+        transform: scale(1);
+    }
+}
+
+@media all and (max-width: 425px) {
+    section {
+        height: 85vh;
+    }
+    section > .title {
+        font-size: 1.8rem;
+    }
+
+    .detail {
+        width: 85% !important;
+    }
+
+    .write-up .title {
+        font-size: 1rem;
+    }
+
+    .write-up .content {
+        font-size: 0.9rem;
+    }
+}
+
+@media all and (max-width: 375px) {
+    section {
+        padding-top: 1.5em;
+        height: 82vh;
+    }
+
+    .detail {
+        gap: 1em;
+        width: 90% !important;
+    }
+
+    .get-started {
+        margin-top: 1.5rem;
+    }
+}
+
+@media all and (max-width: 320px) {
+    section {
+        height: 78vh;
+    }
+
+    .icon {
+        border-radius: 20px;
+        width: 3em;
+        height: 3em;
+    }
 }
 </style>
