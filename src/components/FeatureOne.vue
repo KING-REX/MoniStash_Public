@@ -2,17 +2,7 @@
 import { ref } from 'vue'
 import CustomButton from './CustomButton.vue'
 import IconPlanet1 from './icons/IconPlanet1.vue'
-
-const getValue = (breakpoint: number): boolean =>
-    window.matchMedia(`(max-width: ${breakpoint}px)`).matches
-const matches768 = ref(getValue(768))
-const matches540 = ref(getValue(540))
-const matches425 = ref(getValue(425))
-window.onresize = () => {
-    matches768.value = getValue(768)
-    matches540.value = getValue(540)
-    matches425.value = getValue(425)
-}
+import { matches425, matches540, matches768 } from '@/composables/MatchMedia'
 </script>
 <template>
     <section>

@@ -11,12 +11,7 @@ import IconAmoebaOutline2 from './icons/IconAmoebaOutline2.vue'
 import IconSpiral2 from './icons/IconSpiral2.vue'
 import { computed, ref } from 'vue'
 import IconSpiral3 from './icons/IconSpiral3.vue'
-
-const getValue = () => window.matchMedia('(max-width: 768px)').matches
-const matches768 = ref(getValue())
-window.onresize = () => {
-    matches768.value = getValue()
-}
+import { matches768 } from '@/composables/MatchMedia'
 </script>
 
 <template>
@@ -529,7 +524,7 @@ header .secondary img {
     }
 
     .planet.p1 {
-        display: none;
+        visibility: hidden;
     }
 
     .planet.p2 {
