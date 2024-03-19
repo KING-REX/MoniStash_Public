@@ -8,6 +8,15 @@ import IconAmoebaFilled1 from './icons/IconAmoebaFilled1.vue'
 import IconAmoebaOutline1 from './icons/IconAmoebaOutline1.vue'
 import IconSpiral from './icons/IconSpiral.vue'
 import IconAmoebaOutline2 from './icons/IconAmoebaOutline2.vue'
+import IconSpiral2 from './icons/IconSpiral2.vue'
+import { computed, ref } from 'vue'
+import IconSpiral3 from './icons/IconSpiral3.vue'
+
+const getValue = () => window.matchMedia('(max-width: 768px)').matches
+const matches768 = ref(getValue())
+window.onresize = () => {
+    matches768.value = getValue()
+}
 </script>
 
 <template>
@@ -15,13 +24,19 @@ import IconAmoebaOutline2 from './icons/IconAmoebaOutline2.vue'
         <div class="primary">
             <div class="header-writeup">
                 <div class="title-div">
-                    <h1 class="title">Buy, Sell, and</h1>
-                    <h1 class="title green">Save in Cryptocurrency</h1>
+                    <h1 class="title">{{ !matches768 ? 'Buy, Sell, and' : 'Boost your' }}</h1>
+                    <h1 class="title green">
+                        {{ !matches768 ? 'Save in Cryptocurrency' : 'Crypto Portfolio' }}
+                    </h1>
                 </div>
                 <span class="sub-title">Trade, save and earn interest on your savings.</span>
                 <div class="button-container">
                     <GetStartedButton textClass="get-started-text" class="get-started-button" />
-                    <CustomButton class="contact-us" title="Contact Us" />
+                    <CustomButton
+                        textClass="contact-us-text"
+                        class="contact-us"
+                        title="Contact Us"
+                    />
                 </div>
             </div>
             <div class="global-partners">
@@ -52,7 +67,8 @@ import IconAmoebaOutline2 from './icons/IconAmoebaOutline2.vue'
             <IconAmoebaFilled1 class="shape amoeba f1" />
             <IconAmoebaOutline1 class="shape amoeba o1" />
             <IconAmoebaOutline2 class="shape amoeba o2" />
-            <IconSpiral class="shape spiral" />
+            <IconSpiral2 class="shape spiral" />
+            <IconSpiral3 class="shape spiral2" />
         </div>
     </header>
 </template>
@@ -186,7 +202,10 @@ header .secondary img {
 .spiral {
     top: 0;
     left: 0;
-    z-index: -1;
+}
+
+.spiral2 {
+    display: none;
 }
 
 @media all and (min-width: 2560px) {
@@ -285,7 +304,7 @@ header .secondary img {
 }
 
 @media all and (max-width: 1300px) {
-    .shape {
+    .shape:not(.spiral):not(.spiral2) {
         transform: scale(0.9);
     }
 }
@@ -443,9 +462,12 @@ header .secondary img {
 
 @media all and (max-width: 768px) {
     header {
+        padding-top: 3em;
+        padding-right: 5em;
         height: 115vh;
         flex-direction: column;
         background-color: #fff;
+        overflow: hidden;
     }
 
     header .primary,
@@ -455,11 +477,25 @@ header .secondary img {
     }
 
     header .primary {
-        padding-bottom: 11em;
+        padding-bottom: 9em;
+        z-index: 1;
+    }
+
+    .header-writeup {
+        gap: 1rem;
+    }
+
+    .header-writeup .title,
+    .header-writeup .sub-title {
+        line-height: 1.1;
     }
 
     .header-writeup .title {
-        font-size: 3rem;
+        font-size: 4rem;
+    }
+
+    .header-writeup .sub-title {
+        font-size: 1rem;
     }
 
     .button-container {
@@ -492,6 +528,15 @@ header .secondary img {
         /* width: 80%; */
     }
 
+    .planet.p1 {
+        display: none;
+    }
+
+    .planet.p2 {
+        top: 40%;
+        right: 10%;
+    }
+
     .amoeba.f1 {
         top: 35%;
         left: 22%;
@@ -502,15 +547,188 @@ header .secondary img {
     }
 
     .amoeba.o2 {
-        bottom: -6%;
-        left: 25%;
-        transform: scale(1.3);
+        bottom: -5%;
+        left: 20%;
+        transform: scale(1.3) !important;
     }
 
     .spiral {
         top: 0;
         left: 0;
-        transform: scale(3);
+        transform: scale(1.2);
+        transform-origin: 0 0;
+    }
+
+    .spiral2 {
+        display: initial;
+        bottom: -25%;
+        left: 0;
+        transform-origin: 0 100%;
+        transform: scale(1);
+    }
+}
+
+@media all and (max-width: 700px) {
+    header {
+        height: 105vh;
+    }
+
+    header .primary {
+        padding-bottom: 7em;
+    }
+
+    .header-writeup .title {
+        font-size: 3.5rem;
+    }
+}
+
+@media all and (max-width: 600px) {
+    header {
+        padding-left: 4em;
+        padding-right: 4em;
+        height: 95vh;
+    }
+
+    .header-writeup .title {
+        font-size: 3rem;
+    }
+}
+
+@media all and (max-width: 540px) {
+    header .secondary img {
+        transform: scale(1.2);
+    }
+
+    .amoeba.f1 {
+        top: 30%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    header {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    .header-writeup .title {
+        font-size: 2.5rem;
+    }
+
+    .header-writeup .sub-title {
+        font-size: 0.8rem;
+    }
+
+    .button-container {
+        gap: 1rem;
+    }
+
+    .get-started-button,
+    .contact-us {
+        width: 10rem !important;
+    }
+
+    .get-started-button {
+        height: 3rem !important;
+        gap: 0.8rem !important;
+    }
+}
+
+@media all and (max-width: 465px) {
+    .get-started-button,
+    .contact-us {
+        width: 8.5rem !important;
+    }
+
+    .get-started-button {
+        gap: 0.6rem !important;
+    }
+
+    header .secondary img {
+        transform: scale(1.3);
+    }
+
+    .amoeba.f1 {
+        transform: scale(1.1) !important;
+    }
+}
+
+@media all and (max-width: 425px) {
+    header {
+        height: 80vh;
+    }
+
+    header .primary {
+        padding-bottom: 6em;
+    }
+
+    .header-writeup .title {
+        font-size: 2rem;
+    }
+
+    .header-writeup .sub-title {
+        font-size: 0.7rem;
+    }
+
+    .global-partners ul {
+        margin-top: 1.2rem;
+        width: 100%;
+    }
+
+    .planet.p2 {
+        top: 50%;
+    }
+
+    .spiral,
+    .spiral2 {
+        transform: scale(0.85);
+    }
+
+    .get-started-button {
+        /* width: 8.5rem !important; */
+        height: 2.5rem !important;
+    }
+
+    .contact-us {
+        width: 7.5rem !important;
+    }
+}
+
+@media all and (max-width: 375px) {
+    header {
+        height: 75vh;
+    }
+
+    header .primary {
+        padding-bottom: 7em;
+    }
+
+    .header-writeup {
+        gap: 0.7rem;
+    }
+
+    .header-writeup .title {
+        font-size: 1.6rem;
+    }
+
+    .header-writeup .sub-title {
+        font-size: 0.6rem;
+    }
+
+    .get-started-button {
+        width: 7.5rem !important;
+    }
+
+    .global-partners span {
+        font-size: 0.65rem;
+    }
+
+    .global-partners ul {
+        margin-top: 0.6rem;
+    }
+
+    header .secondary {
+        flex-shrink: 0;
+        width: 35vh;
     }
 }
 </style>
@@ -528,5 +746,24 @@ header .secondary img {
     .get-started-text {
         font-size: 1rem !important;
     }
+
+    .contact-us-text {
+        letter-spacing: 0.08em;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .get-started-text,
+    .contact-us-text {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .get-started-text,
+    .contact-us-text {
+        font-size: 0.7rem !important;
+    }
 }
 </style>
+./icons/IconSpiral2.vue
