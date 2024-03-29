@@ -1,5 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import BlogNew from "@/components/BlogNew.vue"
+</script>
+
 <template>
-    <div></div>
+    <BlogNew />
 </template>
-<style scoped></style>
+
+<style scoped>
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
+</style>

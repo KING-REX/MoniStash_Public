@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import WhatIsMoniStash from "@/components/WhatIsMoniStash.vue"
+import CareerPage from '@/components/CareerPage.vue'
 </script>
 
 <template>
-  <WhatIsMoniStash />
+   <CareerPage />
 </template>
 
-<style>
+<style scoped>
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
@@ -15,3 +15,6 @@ import WhatIsMoniStash from "@/components/WhatIsMoniStash.vue"
   }
 }
 </style>
+
+
+
