@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BlogNew from "@/components/BlogNew.vue"
+
 </script>
 
 <template>
