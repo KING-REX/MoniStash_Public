@@ -20,7 +20,7 @@ export default defineConfig({
   // base: '/MoniStash_Public/'
   module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/my-project/'
+    ? '/MoniStash_Public/'
     : '/'
 }
 })
