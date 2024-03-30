@@ -7,6 +7,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/MoniStash_Public/",
   plugins: [
     vue(),
     vueJsx(),
@@ -19,9 +20,9 @@ export default defineConfig({
   },
 })
 
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/MoniStash_Public/'
-    : '/'
-}
+// module.exports = {
+//   publicPath: process.env.NODE_ENV === 'production'
+//     ? '/MoniStash_Public/'
+//     : '/'
+// }
 
