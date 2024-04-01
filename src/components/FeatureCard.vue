@@ -1,8 +1,16 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import IconCardLine from './icons/IconCardLine.vue'
 import IconPlanet3 from './icons/IconPlanet3.vue'
+import type Writeup from '@/composables/Writeup'
 
-const props = defineProps<{ title: string; content: string }>()
+const width = ref(window.innerWidth)
+
+window.onresize = () => {
+    width.value = window.innerWidth
+}
+
+const props = defineProps<Writeup>()
 </script>
 <template>
     <div class="container">
@@ -18,7 +26,8 @@ const props = defineProps<{ title: string; content: string }>()
 .container {
     position: relative;
     flex-shrink: 0;
-    width: 50em;
+    /* width: 40vw !important; */
+    width: v-bind(((40 / 100) * width) + 'px') !important;
     height: 33vh;
     border-radius: 25px;
     box-shadow: 0 15px 20px 5px #00000016;
@@ -54,5 +63,19 @@ const props = defineProps<{ title: string; content: string }>()
     right: 0;
     transform: scale(1.3);
     transform-origin: 100% 100%;
+}
+
+@media all and (max-width: 1880px) {
+    .container {
+        width: 45em;
+    }
+
+    .write-up-container {
+        padding-top: 4em;
+    }
+
+    .content {
+        font-size: 1rem;
+    }
 }
 </style>
