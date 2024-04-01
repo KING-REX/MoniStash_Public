@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import IconPlanet1 from './icons/IconPlanet1.vue'
+import IconPlanet1 from '@/components/icons/IconPlanet1.vue'
 import { matches425, matches700, matches768 } from '@/composables/MatchMedia'
 
 const activeIndex = ref<number>(0)

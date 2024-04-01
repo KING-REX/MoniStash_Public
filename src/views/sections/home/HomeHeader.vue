@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import GetStartedButton from './GetStartedButton.vue'
-import CustomButton from './CustomButton.vue'
-import IconPlanet1 from './icons/IconPlanet1.vue'
-import IconPlanet2 from './icons/IconPlanet2.vue'
-import IconAmoebaFilled1 from './icons/IconAmoebaFilled1.vue'
-import IconAmoebaOutline1 from './icons/IconAmoebaOutline1.vue'
-import IconSpiral from './icons/IconSpiral.vue'
-import IconAmoebaOutline2 from './icons/IconAmoebaOutline2.vue'
-import IconSpiral2 from './icons/IconSpiral2.vue'
+import GetStartedButton from '@/components/GetStartedButton.vue'
+import CustomButton from '@/components/CustomButton.vue'
+import IconPlanet1 from '@/components/icons/IconPlanet1.vue'
+import IconPlanet2 from '@/components/icons/IconPlanet2.vue'
+import IconAmoebaFilled1 from '@/components/icons/IconAmoebaFilled1.vue'
+import IconAmoebaOutline1 from '@/components/icons/IconAmoebaOutline1.vue'
+import IconSpiral from '@/components/icons/IconSpiral.vue'
+import IconAmoebaOutline2 from '@/components/icons/IconAmoebaOutline2.vue'
+import IconSpiral2 from '@/components/icons/IconSpiral2.vue'
 import { computed, ref } from 'vue'
-import IconSpiral3 from './icons/IconSpiral3.vue'
+import IconSpiral3 from '@/components/icons/IconSpiral3.vue'
 import { matches768 } from '@/composables/MatchMedia'
 </script>
 
@@ -761,4 +761,4 @@ header .secondary img {
     }
 }
 </style>
-./icons/IconSpiral2.vue
+@/components/icons/IconSpiral2.vue

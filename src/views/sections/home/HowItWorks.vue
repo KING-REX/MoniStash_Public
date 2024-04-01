@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { matches320, matches540, matches768, matches900 } from '@/composables/MatchMedia'
-import GetStartedButton from './GetStartedButton.vue'
-import IconDoubleUser from './icons/IconDoubleUser.vue'
-import IconFundWallet from './icons/IconFundWallet.vue'
-import IconWithdraw from './icons/IconWithdraw.vue'
+import GetStartedButton from '@/components/GetStartedButton.vue'
+import IconDoubleUser from '@/components/icons/IconDoubleUser.vue'
+import IconFundWallet from '@/components/icons/IconFundWallet.vue'
+import IconWithdraw from '@/components/icons/IconWithdraw.vue'
 </script>
 <template>
     <section>

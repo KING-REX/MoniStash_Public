@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import IconAmoebaSolid1 from './icons/IconAmoebaSolid1.vue'
-import IconAppleStore from './icons/IconAppleStore.vue'
-import IconGooglePlay from './icons/IconGooglePlay.vue'
-import IconPlanet4 from './icons/IconPlanet4.vue'
+import IconAmoebaSolid1 from '@/components/icons/IconAmoebaSolid1.vue'
+import IconAppleStore from '@/components/icons/IconAppleStore.vue'
+import IconGooglePlay from '@/components/icons/IconGooglePlay.vue'
+import IconPlanet4 from '@/components/icons/IconPlanet4.vue'
 import { matches768 } from '@/composables/MatchMedia'
 </script>
 <template>

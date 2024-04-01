@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import CustomButton from './CustomButton.vue'
-import IconPlanet1 from './icons/IconPlanet1.vue'
+import CustomButton from '@/components/CustomButton.vue'
+import IconPlanet1 from '@/components/icons/IconPlanet1.vue'
 import { matches425, matches540, matches768 } from '@/composables/MatchMedia'
 </script>
 <template>

@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import FeatureCard from './FeatureCard.vue'
+import FeatureCard from '@/components/FeatureCard.vue'
 import { ref } from 'vue'
-import IconChevronRight from './icons/IconChevronRight.vue'
-import IconChevronLeft from './icons/IconChevronLeft.vue'
+import IconChevronRight from '@/components/icons/IconChevronRight.vue'
+import IconChevronLeft from '@/components/icons/IconChevronLeft.vue'
+import type Writeup from '@/composables/Writeup'
 
-const data: { title: string; content: string }[] = [
+const data: Writeup[] = [
     {
         title: 'High Monthly Return',
         content:

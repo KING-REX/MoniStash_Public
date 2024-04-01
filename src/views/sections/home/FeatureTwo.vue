@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import FeatureTwoCard from './FeatureTwoCard.vue'
-import IconCryptocurrency from './icons/IconCryptocurrency.vue'
-import IconTransfer from './icons/IconTransfer.vue'
-import IconSecurity from './icons/IconSecurity.vue'
-import IconCryptoExchange from './icons/IconCryptoExchange.vue'
+import FeatureTwoCard from '@/components/FeatureTwoCard.vue'
+import IconCryptocurrency from '@/components/icons/IconCryptocurrency.vue'
+import IconTransfer from '@/components/icons/IconTransfer.vue'
+import IconSecurity from '@/components/icons/IconSecurity.vue'
+import IconCryptoExchange from '@/components/icons/IconCryptoExchange.vue'
 import { computed } from 'vue'
-import IconPlanet1 from './icons/IconPlanet1.vue'
-import IconAmoebaOutline5 from './icons/IconAmoebaOutline5.vue'
+import IconPlanet1 from '@/components/icons/IconPlanet1.vue'
+import IconAmoebaOutline5 from '@/components/icons/IconAmoebaOutline5.vue'
 const data = [
     {
         title: 'Cryptocurrency',
