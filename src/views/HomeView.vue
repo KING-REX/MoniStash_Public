@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import FeatureOne from '@/components/FeatureOne.vue'
-import HomeHeader from '@/components/HomeHeader.vue'
-import ExchangeRates from '@/components/ExchangeRates.vue'
-import WhySave from '@/components/WhySave.vue'
-import FeatureTwo from '@/components/FeatureTwo.vue'
-import HowItWorks from '@/components/HowItWorks.vue'
-import AppDownload from '@/components/AppDownload.vue'
+import FeatureOne from './sections/home/FeatureOne.vue'
+import HomeHeader from './sections/home/HomeHeader.vue'
+import ExchangeRates from './sections/home/ExchangeRates.vue'
+import WhySave from './sections/home/WhySave.vue'
+import FeatureTwo from './sections/home/FeatureTwo.vue'
+import HowItWorks from './sections/home/HowItWorks.vue'
+import AppDownload from './sections/home/AppDownload.vue'
 import AppFooter from '@/components/AppFooter.vue'
 </script>
 

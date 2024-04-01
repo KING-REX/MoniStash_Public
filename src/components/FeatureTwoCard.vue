@@ -1,13 +1,14 @@
 <script setup lang="ts">
-const { title, content, top, right, bottom, left } = defineProps<{
-    title: string
-    content: string
-    icon?: Element
-    top?: string
-    right?: string
-    bottom?: string
-    left?: string
-}>()
+import type Writeup from '@/composables/Writeup'
+const { title, content, top, right, bottom, left } = defineProps<
+    Writeup & {
+        icon?: Element
+        top?: string
+        right?: string
+        bottom?: string
+        left?: string
+    }
+>()
 </script>
 <template>
     <div class="card-container" :style="{ top, right, bottom, left }">

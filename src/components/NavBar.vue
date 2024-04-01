@@ -34,6 +34,9 @@ nav {
     background-color: #fafafa;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav > * {
