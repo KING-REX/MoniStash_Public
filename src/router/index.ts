@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import TradeCrypto from '../views/sections/unauthenticated-user-trade/BaseTradeComponent.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,8 +41,9 @@ const router = createRouter({
         {
             path: '/trade-crypto',
             name: 'trade-crypto',
-            component: () =>
-                import('../views/sections/unauthenticated-user-trade/BaseTradeComponent.vue')
+            // component: () =>
+            //     import('../views/sections/unauthenticated-user-trade/BaseTradeComponent.vue')
+            component: TradeCrypto
         }
     ]
 })
