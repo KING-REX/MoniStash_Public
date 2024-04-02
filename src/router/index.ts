@@ -20,28 +20,28 @@ const router = createRouter({
         {
             path: '/blog',
             name: 'blog',
-            component: () => import('@/views/BlogView.vue')
+            component: () => import('../views/BlogView.vue')
         },
         {
             path: '/blog-details',
             name: 'blog-details',
-            component: () => import('@/views/BlogDetailsView.vue')
+            component: () => import('../views/BlogDetailsView.vue')
         },
         {
             path: '/faqs',
             name: 'faqs',
-            component: () => import('@/views/FaqView.vue')
+            component: () => import('../views/FaqView.vue')
         },
         {
             path: '/career-page',
             name: 'career-page',
-            component: () => import('@/views/CareerView.vue')
+            component: () => import('../views/CareerView.vue')
         },
         {
             path: '/trade-crypto',
             name: 'trade-crypto',
             component: () =>
-                import('@/views/sections/unauthenticated-user-trade/BaseTradeComponent.vue')
+                import('../views/sections/unauthenticated-user-trade/BaseTradeComponent.vue')
         }
     ]
 })
