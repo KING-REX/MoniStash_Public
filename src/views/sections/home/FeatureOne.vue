@@ -18,6 +18,8 @@ import { matches425, matches540, matches768 } from '@/composables/MatchMedia'
                         fontSize: `${matches425 ? 0.9 : matches540 ? 1 : 1.3}em`
                     }"
                     classes="button"
+                    type="link"
+                    linkHref="trade-crypto"
                 />
             </div>
         </div>

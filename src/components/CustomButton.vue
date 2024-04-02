@@ -11,6 +11,7 @@ interface CustomButtonProps {
     containerStyle?: StyleValue
     classes?: string
     textClass?: string
+    linkHref?: string
 }
 const props = withDefaults(defineProps<CustomButtonProps>(), { type: 'button' })
 </script>
@@ -27,8 +28,9 @@ const props = withDefaults(defineProps<CustomButtonProps>(), { type: 'button' })
     <a
         :style="containerStyle"
         v-else
-        @click.stop.prevent="props.onclick"
+        @click="props.onclick"
         :class="'btn ' + (classes ?? '')"
+        :href="linkHref"
     >
         <span :class="textClass" :style="textStyle">{{ title }}</span>
         <slot></slot>
