@@ -5,7 +5,7 @@ interface CustomButtonProps {
     title: string
     fill?: boolean
     type?: 'link' | 'button'
-    onclick?: () => void
+    onclick?: (event: MouseEvent) => void
     textColor?: string
     textStyle?: StyleValue
     containerStyle?: StyleValue
@@ -18,6 +18,7 @@ const props = withDefaults(defineProps<CustomButtonProps>(), { type: 'button' })
     <button
         :style="containerStyle"
         v-if="props.type === 'button'"
+        @click.stop.prevent="props.onclick"
         :class="'btn ' + (classes ?? '')"
     >
         <span :class="textClass" :style="textStyle">{{ title }}</span>
