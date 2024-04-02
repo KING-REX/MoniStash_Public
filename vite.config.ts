@@ -7,17 +7,13 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/MoniStash_Public/",
-  plugins: [
-    vue(),
-    vueJsx(),
-    VueDevTools(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+    base: '/MoniStash_Public/',
+    plugins: [vue(), vueJsx(), VueDevTools()],
+    resolve: {
+        alias: {
+            '@': fileURLToPath(new URL('./src', import.meta.url))
+        }
     }
-  },
 })
 
 // module.exports = {
@@ -25,4 +21,3 @@ export default defineConfig({
 //     ? '/MoniStash_Public/'
 //     : '/'
 // }
-
