@@ -19,8 +19,9 @@ import { matches425, matches540, matches768 } from '@/composables/MatchMedia'
                     }"
                     classes="button"
                     type="link"
-                    linkHref="trade-crypto"
+                    linkHref="/MoniStash_Public/trade-crypto/"
                 />
+                <!-- <RouterLink to="/faqs">FAQs</RouterLink> -->
             </div>
         </div>
         <div class="write-up">
