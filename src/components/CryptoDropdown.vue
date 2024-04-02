@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import IconChevronRight from './icons/IconChevronRight.vue'
-import { cryptocurrencyList } from '@/composables/CryptocurrencyList.ts'
+import { cryptocurrencyList } from '@/composables/CryptocurrencyList'
 
 const cryptocurrencies = ref(cryptocurrencyList)
 
