@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { ref, computed, defineProps } from 'vue'
 import IconChevronRight from './icons/IconChevronRight.vue'
-import { currencyList } from '@/composables/CurrencyList.ts'
+import { currencyList } from '@/composables/CurrencyList'
 
 const props = defineProps<{ onCurrencySelect?: (currency: string) => void }>()
 
