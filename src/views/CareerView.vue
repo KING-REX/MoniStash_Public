@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import CareerPage from '@/components/CareerPage.vue'
+ import CareerPage from '@/components/CareerPage.vue'
 </script>
 
 <template>
