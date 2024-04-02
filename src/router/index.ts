@@ -36,6 +36,12 @@ const router = createRouter({
             path: '/career-page',
             name: 'career-page',
             component: () => import('@/views/CareerView.vue')
+        },
+        {
+            path: '/trade-crypto',
+            name: 'trade-crypto',
+            component: () =>
+                import('@/views/sections/unauthenticated-user-trade/BaseTradeComponent.vue')
         }
     ]
 })
