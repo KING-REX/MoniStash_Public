@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import type { StyleValue } from 'vue'
 import { RouteLocationRaw } from 'vue-router'
 
@@ -22,4 +22,4 @@ const props = withDefaults(defineProps<CustomRouterProps>(), { type: 'link' })
         <span :class="textClass" :style="textStyle">{{ title }}</span>
     </RouterLink>
 </template>
-<style scoped></style>
+<style scoped></style> -->
