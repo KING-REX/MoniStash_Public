@@ -9,7 +9,7 @@ import { matches425, matches540, matches768 } from '@/composables/MatchMedia'
         <div class="primary">
             <div class="image-container">
                 <img src="@/assets/feature_1_image_card-cropped.svg" alt="" />
-                <CustomButton
+                <!-- <CustomButton
                     title="Buy Crypto"
                     fill
                     textColor="#fff"
@@ -19,9 +19,20 @@ import { matches425, matches540, matches768 } from '@/composables/MatchMedia'
                     }"
                     classes="button"
                     type="link"
-                    linkHref="/MoniStash_Public/trade-crypto/"
-                />
-                <!-- <RouterLink to="/faqs">FAQs</RouterLink> -->
+                    linkHref="trade-c"
+                /> -->
+                <!-- <CustomRouterLink
+                    title="Buy Crypto"
+                    to="trade-crypto"
+                    fill
+                    textColor="#fff"
+                    :textStyle="{
+                        fontWeight: '600',
+                        fontSize: `${matches425 ? 0.9 : matches540 ? 1 : 1.3}em`
+                    }"
+                    classes=" button"
+                /> -->
+                <RouterLink to="trade-crypto" class="button">Buy Crypto</RouterLink>
             </div>
         </div>
         <div class="write-up">
@@ -133,6 +144,15 @@ section .image-container img {
 #planet-3 {
     bottom: 23%;
     right: 16.5%;
+}
+
+.button {
+    background-color: var(--color-primary);
+    font-size: 3em;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.8rem;
 }
 
 @media all and (min-width: 2560px) {
