@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import type { StyleValue } from 'vue'
+import { type RouteLocationRaw } from 'vue-router'
 
 interface CustomButtonProps {
     title: string
     fill?: boolean
-    type?: 'link' | 'button'
+    type?: 'link' | 'button' | 'router-link'
     onclick?: (event: MouseEvent) => void
     textColor?: string
     textStyle?: StyleValue
     containerStyle?: StyleValue
-    classes?: string
     textClass?: string
     linkHref?: string
+    to?: RouteLocationRaw
 }
 const props = withDefaults(defineProps<CustomButtonProps>(), { type: 'button' })
 </script>
@@ -20,21 +21,31 @@ const props = withDefaults(defineProps<CustomButtonProps>(), { type: 'button' })
         :style="containerStyle"
         v-if="props.type === 'button'"
         @click.stop.prevent="props.onclick"
-        :class="'btn ' + (classes ?? '')"
+        class="btn"
     >
         <span :class="textClass" :style="textStyle">{{ title }}</span>
         <slot></slot>
     </button>
     <a
         :style="containerStyle"
-        v-else
+        v-else-if="props.type === 'link'"
         @click="props.onclick"
-        :class="'btn ' + (classes ?? '')"
+        class="btn"
         :href="linkHref"
     >
         <span :class="textClass" :style="textStyle">{{ title }}</span>
         <slot></slot>
     </a>
+    <RouterLink
+        :style="containerStyle"
+        v-else-if="props.type === 'router-link' && props.to"
+        @click="props.onclick"
+        class="btn"
+        :to="props.to"
+    >
+        <span :class="textClass" :style="textStyle">{{ title }}</span>
+        <slot></slot>
+    </RouterLink>
 </template>
 <style scoped>
 .btn {
